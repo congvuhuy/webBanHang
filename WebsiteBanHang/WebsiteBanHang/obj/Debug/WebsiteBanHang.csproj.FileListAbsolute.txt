@@ -101,8 +101,10 @@ D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\bin\Microsoft.Owin.S
 D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\bin\Microsoft.Owin.Security.OAuth.xml
 D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBanHang.csproj.AssemblyReference.cache
 D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBanHang.csproj.CoreCompileInputs.cache
 D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBanHang.csproj.CopyComplete
 D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBanHang.dll
 D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBanHang.pdb
+D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBanHang.csproj.AssemblyReference.cache
+D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBanHang.Migrations.CreateDB.resources
+D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBanHang.csproj.GenerateResource.cache

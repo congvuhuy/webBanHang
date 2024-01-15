@@ -13,7 +13,6 @@ namespace WebsiteBanHang.Models.EF
     {
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
-
         public int Id { get; set; }
         public string Name { get; set; }
         public string Website { get; set; }

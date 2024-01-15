@@ -16,14 +16,13 @@ namespace WebsiteBanHang.Models.EF
         }
 
         [Key]
-        [Column(Order = 0)]
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
         public int OrderID { get; set; }
-        [Key, Column(Order = 1)]
         public int ProductID { get; set; }
         public Decimal Price { get; set; }
         public int Quantity { get; set; }
-        public virtual Product Products { get; set; }
         public virtual Order Order { get; set; }
-        
+        public ICollection<Product>  Products { get; set; }
     }
 }

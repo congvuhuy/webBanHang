@@ -28,8 +28,8 @@ namespace WebsiteBanHang.Models.EF
         public string SeoDescription { get; set; }
         public string SeoTile { get; set; }
         public string SeoKeywords { get; set; }
-
         public virtual ProductCategory ProductCategory { get; set; }
         public virtual OrderDetail OrderDetail { get; set; }
+
     }
 }

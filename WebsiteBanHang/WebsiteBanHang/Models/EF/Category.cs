@@ -13,7 +13,7 @@ namespace WebsiteBanHang.Models.EF
         public Category()
         {
             this.News = new HashSet<New>();
-            this.Posts = new HashSet<Post>();
+            
         }
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
