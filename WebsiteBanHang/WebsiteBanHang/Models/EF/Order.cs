@@ -21,7 +21,7 @@ namespace WebsiteBanHang.Models.EF
         public string CustomerName { get; set; }
         public string Phone { get; set; }
         public string Address { get; set; }
-        public decimal totalAmount  { get; set; }
+        public decimal TotalAmount  { get; set; }
         public int Quantity { get; set; }
         public ICollection<OrderDetail> OrderDetails { get; set; }
     }

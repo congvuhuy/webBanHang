@@ -17,7 +17,7 @@ namespace WebsiteBanHang.Models.EF
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        public string Tile { get; set; }
+        public string Title { get; set; }
         public string Description { get; set; }
 
         public ICollection<Product> Products { get; set; }
