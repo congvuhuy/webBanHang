@@ -110,3 +110,6 @@ D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBan
 D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBanHang.csproj.GenerateResource.cache
 D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBanHang.Migrations.db.resources
 D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBanHang.Migrations.updatedata.resources
+D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBanHang.Migrations.db1.resources
+D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBanHang.Migrations.capnhatDB.resources
+D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBanHang.Migrations.capnhatDB1.resources

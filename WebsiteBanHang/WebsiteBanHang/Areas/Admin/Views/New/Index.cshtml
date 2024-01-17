@@ -1,6 +1,7 @@
-﻿@model IEnumerable<WebsiteBanHang.Models.EF.Category>
+﻿
+@model IEnumerable<WebsiteBanHang.Models.EF.New>
 @{
-    ViewBag.Title = "Danh muc";
+    ViewBag.Title = "Bài viết";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
@@ -10,10 +11,10 @@
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="/Admin/Home" class="nav-link">Home</a>
+            <a href="/Admin/Home" class="nav-link">Trang chủ</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="/Admin/Category" class="nav-link">Danh muc</a>
+            <a href="/Admin/New" class="nav-link">Tin tức</a>
         </li>
     </ul>
 }
@@ -21,12 +22,12 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Quản lý danh muc</h1>
+                <h1>Quản lý tin tức</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="#">Trang chu</a></li>
-                    <li class="breadcrumb-item active">Danh muc</li>
+                    <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+                    <li class="breadcrumb-item active">Tin tức</li>
                 </ol>
             </div>
         </div>
@@ -40,9 +41,9 @@
     <!-- Default box -->
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Danh sách danh muc</h3>
+            <h3 class="card-title">Danh sách tin tức</h3>
             <div class="card-tools">
-                <a href="/Admin/Category/Add" class="btn btn-primary">Thêm mới</a>
+                <a href="/Admin/New/Add" class="btn btn-primary">Thêm mới</a>
             </div>
 
         </div>
@@ -51,9 +52,10 @@
                 <thead>
                     <tr>
                         <th>Stt</th>
-                        <th>Tên danh mục</th>
+                        <th>Hình ảnh</th>
+                        <th>Tiêu đề</th>
                         <th>Thứ tự</th>
-                        
+
                     </tr>
                 </thead>
                 @if (Model != null && Model.Any())
@@ -61,17 +63,17 @@
                     int i = 1;
                     foreach (var item in Model)
                     {
-            <tr id="trow_@item.Id">
-                <td>@i</td>
-                <td>@item.Title</td>
-                <td>@item.Position</td>
-                
-                <td>
-                    <a href="/Admin/Category/Edit/@item.Id" class="btn btn-danger">Sửa</a>
-                    <a href="#" data-id="@item.Id" class="btn btn-primary btnDelete">Xóa</a>
-                </td>
-            </tr>
-                        
+                        <tr id="trow_@item.Id">
+                            <td>@item.Image</td>
+                            <td>@item.Title</td>
+                            <td>@item.CreateDate.ToString("dd/MM/yyyy")</td>
+
+                            <td>
+                                <a href="/Admin/New/Edit/@item.Id" class="btn btn-danger">Sửa</a>
+                                <a href="#" data-id="@item.Id" class="btn btn-primary btnDelete">Xóa</a>
+                            </td>
+                        </tr>
+
                         i++;
                     }
 
@@ -83,10 +85,10 @@
                             Không có bản ghi nào
                         </td>
                     </tr>
-                    
+
                 }
             </table>
-           
+
         </div>
         <!-- /.card-body -->
         @*<div class="card-footer">
@@ -106,7 +108,7 @@
                 var conf = confirm("Xac nhan xoa!");
                     if (conf === true) {
                     $.ajax({
-                        url: '/Admin/Category/Delete',
+                        url: '/Admin/New/Delete',
                         type: 'POST',
                         data: { id: id },
                         success: function (rs) {

@@ -170,6 +170,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\NewController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -187,6 +188,18 @@
     <Compile Include="Migrations\202401161730105_update-data.cs" />
     <Compile Include="Migrations\202401161730105_update-data.Designer.cs">
       <DependentUpon>202401161730105_update-data.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202401171427193_db1.cs" />
+    <Compile Include="Migrations\202401171427193_db1.Designer.cs">
+      <DependentUpon>202401171427193_db1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202401171623004_capnhatDB.cs" />
+    <Compile Include="Migrations\202401171623004_capnhatDB.Designer.cs">
+      <DependentUpon>202401171623004_capnhatDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202401171644233_capnhatDB1.cs" />
+    <Compile Include="Migrations\202401171644233_capnhatDB1.Designer.cs">
+      <DependentUpon>202401171644233_capnhatDB1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -2198,6 +2211,9 @@
     <Content Include="Areas\Admin\Views\Shared\_PartialSideBar.cshtml" />
     <Content Include="Areas\Admin\Views\Category\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Category\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\New\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\New\Add.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2270,6 +2286,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202401161730105_update-data.resx">
       <DependentUpon>202401161730105_update-data.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401171427193_db1.resx">
+      <DependentUpon>202401171427193_db1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401171623004_capnhatDB.resx">
+      <DependentUpon>202401171623004_capnhatDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401171644233_capnhatDB1.resx">
+      <DependentUpon>202401171644233_capnhatDB1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

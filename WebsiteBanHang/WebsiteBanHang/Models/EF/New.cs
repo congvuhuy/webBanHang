@@ -13,7 +13,9 @@ namespace WebsiteBanHang.Models.EF
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        public string Ttile { get; set; }
+        [Required(ErrorMessage = "không đươc để trống")]
+        [StringLength(150)]
+        public string Title { get; set; }
         public int CategoryID { get; set; }
         public string Alias { get; set; }
         public string Description { get; set; }
