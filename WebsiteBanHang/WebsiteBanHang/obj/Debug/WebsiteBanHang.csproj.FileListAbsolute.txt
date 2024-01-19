@@ -106,10 +106,7 @@ D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBan
 D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBanHang.dll
 D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBanHang.pdb
 D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBanHang.csproj.AssemblyReference.cache
-D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBanHang.Migrations.CreateDB.resources
-D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBanHang.csproj.GenerateResource.cache
+D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\bin\CKFinder.dll
+D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\bin\CKFinder.pdb
 D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBanHang.Migrations.db.resources
-D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBanHang.Migrations.updatedata.resources
-D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBanHang.Migrations.db1.resources
-D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBanHang.Migrations.capnhatDB.resources
-D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBanHang.Migrations.capnhatDB1.resources
+D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBanHang.csproj.GenerateResource.cache

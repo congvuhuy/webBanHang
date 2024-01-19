@@ -14,11 +14,29 @@ namespace WebsiteBanHang.Areas.Admin.Controllers
         // GET: Admin/New
         public ActionResult Index()
         {
-            return View();
+            var items = db.News;
+            return View(items);
         }
         public ActionResult Add()
         {
             return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Add(New model)
+        {
+            if (ModelState.IsValid)
+            {
+                model.CreateDate = DateTime.Now;
+                model.ModifierDate = DateTime.Now;
+                model.CategoryID = 1;
+                model.Alias = WebsiteBanHang.Models.Commons.Filter.FilterChar(model.Title);
+                db.News.Add(model);
+                db.SaveChanges();
+                
+                return RedirectToAction("Index");
+            }
+            return View(model);
         }
     }
 }
