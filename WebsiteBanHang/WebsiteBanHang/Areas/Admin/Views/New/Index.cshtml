@@ -44,35 +44,43 @@
             <h3 class="card-title">Danh sách tin tức</h3>
             <div class="card-tools">
                 <a href="/Admin/New/Add" class="btn btn-primary">Thêm mới</a>
+                <a href="#"  class="btn btn-danger btnDeleteAll">Xóa</a>
             </div>
         </div>
         <div class="card-body">
             <table class="table table-hover">
                 <thead>
                     <tr>
-
+                        <th><input type="checkbox" id="selectAll"/>  All</th>
                         <th>Stt</th>
                         <th>Ảnh</th>
                         <th>Tiêu đề</th>
                         <th>Ngày tao</th>
+                        <th>Hiển thi</th>
 
                     </tr>
                 </thead>
                 @if (Model != null && Model.Any())
-                { 
-                int i = 1;
+                {
+                    int i = 1;
                     foreach (var item in Model)
                     {
-                        <tr id="trow_@item.Id">
-                            <td>@i</td>
-                            <td><img src="@item.Image"  height="70px" width="70px"/></td>
-                            <td>@item.Title</td>
-                            <td>@item.CreateDate.ToString("dd/MM/yyyy")</td>
-                            <td>
-                                <a href="/Admin/New/Edit/@item.Id" class="btn btn-danger">Sửa</a>
-                                <a href="#" data-id="@item.Id" class="btn btn-primary btnDelete">Xóa</a>
-                            </td>
-                        </tr>
+                        var StrCheck = @item.IsActive ? "<i class='fas fa-check text-success'></i>" : "<i class='fas fa-times text-danger'></i>";
+
+                    <tr id="trow_@item.Id">
+                        <td><input type="checkbox" class="select" value="@item.Id" /></td>
+                        <td>@i</td>
+                        <td><img src="@item.Image" class="rounded-circle" height="70px" width="70px" /></td>
+                        <td>@item.Title</td>
+                        <td>@item.CreateDate.ToString("dd/MM/yyyy")</td>
+                        <td>
+                            <a href="#" data-id="@item.Id" class="btnActive px-3">@Html.Raw(StrCheck)</a>
+                        </td>
+                        <td>
+                            <a href="/Admin/New/Edit/@item.Id" class="btn btn-danger">Sửa</a>
+                            <a href="#" data-id="@item.Id" class="btn btn-primary btnDelete">Xóa</a>
+                        </td>
+                    </tr>
 
                         i++;
                 }
@@ -102,13 +110,59 @@
 
 @section scripts{
     <script>
-        /*        $(document).ready(function () {*/
+        $('body').on('click', '.btnDeleteAll', function (e) { 
+            e.preventDefault();
+            var str = "";
+            var i = 0;
+            var checkItem = $(this).parents('.card').find('tr td input:checkbox');
+            checkItem.each(function () {
+                if (this.checked) {
+                    var item = $(this).val();
+                    if (i===0) {
+                        str += item;
+                    } else {
+                        str += "," + item;
+                    }
+                    i++;
+                } else {
+                    checkItem.attr('selected', '');
+                }
+            });
+            var conf = confirm("Xác nhân xóa tất cả tin tức trên");
+            if (conf) {
+                $.ajax({
+                    url: '/Admin/New/DeleteAll',
+                    type: 'POST',
+                    data: { ids: str },
+                    success: function (rs) {
+                        if (rs.success) {
+                            location.reload();
+                        }
+                    }
+                });
+            }
+            
+        });
+        $('body').on('change', '#selectAll', function () {
+            
+            var checkStatus = this.checked;
+            var checkItem = $(this).parents('.card-body').find('tr td input:checkbox');
+            checkItem.each(function () {
+                this.checked = checkStatus;
+                if (this.checked) {
+                    checkItem.attr('selected', 'checked');
+                } else {
+                    checkItem.attr('selected', '');
+                }
+            });
+        });
+        
         $('body').on('click', '.btnDelete', function () {
             var id = $(this).data("id");
             var conf = confirm("Xac nhan xoa!");
             if (conf === true) {
                 $.ajax({
-                    url: '/Admin/Category/Delete',
+                    url: '/Admin/New/Delete',
                     type: 'POST',
                     data: { id: id },
                     success: function (rs) {
@@ -119,6 +173,30 @@
                 });
             }
         });
-            /*});*/
+        $('body').on('click', '.btnActive', function (e) {
+            e.preventDefault();
+            var btn = $(this)
+            var id = btn.data("id");
+        
+                $.ajax({
+                    url: '/Admin/New/Active',
+                    type: 'POST',
+                    data: { id: id },
+                    success: function (rs) {
+                      
+                        if (rs.success) {
+                            if (rs.IsActives) {
+                                btn.html("<i class='fas fa-check text-success'></i>");
+                            } else {
+                                btn.html("<i class='fas fa-times text-danger'></i>");
+
+                            }
+                        }
+                    }
+                });
+            
+            
+        });
+            //});
     </script>
 }

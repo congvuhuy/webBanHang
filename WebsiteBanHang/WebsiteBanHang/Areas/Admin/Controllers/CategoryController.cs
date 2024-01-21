@@ -62,6 +62,7 @@ namespace WebsiteBanHang.Areas.Admin.Controllers
                 db.Entry(model).Property(x => x.SeoKeywords).IsModified = true;
                 db.Entry(model).Property(x => x.ModifierDate).IsModified = true;
                 db.Entry(model).Property(x => x.ModifierBy).IsModified = true;
+                db.Entry(model).Property(x => x.IsActive).IsModified = true;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

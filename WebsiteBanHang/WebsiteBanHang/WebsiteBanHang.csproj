@@ -185,6 +185,10 @@
     <Compile Include="Migrations\202401191827396_db.Designer.cs">
       <DependentUpon>202401191827396_db.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202401201740333_db1.cs" />
+    <Compile Include="Migrations\202401201740333_db1.Designer.cs">
+      <DependentUpon>202401201740333_db1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CommonAbstract.cs" />
@@ -3102,6 +3106,7 @@
     <Content Include="Content\ckeditor\samples\plugins\htmlwriter\assets\outputforflash\outputforflash.fla" />
     <Content Include="Content\ckeditor\skins\moono\readme.md" />
     <Content Include="Content\ckfinder\plugins\fileeditor\codemirror\LICENSE" />
+    <Content Include="Areas\Admin\Views\New\Edit.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -3169,6 +3174,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202401191827396_db.resx">
       <DependentUpon>202401191827396_db.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401201740333_db1.resx">
+      <DependentUpon>202401201740333_db1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

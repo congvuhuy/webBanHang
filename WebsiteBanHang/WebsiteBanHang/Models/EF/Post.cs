@@ -22,6 +22,7 @@ namespace WebsiteBanHang.Models.EF
         public string SeoDescription { get; set; }
         public string SeoTitle { get; set; }
         public string SeoKeywords { get; set; }
+        public bool IsActive { get; set; }
 
         public virtual Category Category { get; set; }
     }

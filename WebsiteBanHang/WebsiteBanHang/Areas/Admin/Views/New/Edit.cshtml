@@ -1,7 +1,9 @@
-﻿@model WebsiteBanHang.Models.EF.Category
+﻿
+
+@model WebsiteBanHang.Models.EF.New
 
 @{
-    ViewBag.Title = "Thêm mới";
+    ViewBag.Title = "Thêm mới tin tức";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 @section naviheader{
@@ -13,10 +15,10 @@
             <a href="/Admin/Home" class="nav-link">Trang chủ</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="/Admin/Category" class="nav-link">Danh muc</a>
+            <a href="/Admin/New" class="nav-link">Tin tức</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="/Admin/Category/Add" class="nav-link">Thêm mới</a>
+            <a href="/Admin/New/Edit" class="nav-link">Câp nhât</a>
         </li>
     </ul>
 }
@@ -24,12 +26,12 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Quản lý danh muc</h1>
+                <h1>Quản lý tin tức</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="#">Trang chu</a></li>
-                    <li class="breadcrumb-item active">Danh muc</li>
+                    <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+                    <li class="breadcrumb-item active">Tin tức</li>
                 </ol>
             </div>
         </div>
@@ -52,34 +54,45 @@
         <div class="card-body">
             <div class="card card-primary">
                 <div class="card-header">
-                    <h3 class="card-title">Thông tin danh muc <small></small></h3>
+                    <h3 class="card-title">Thông tin tin tức <small></small></h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-               @using (Html.BeginForm("Add", "Category", FormMethod.Post, new { }))
+                @using (Html.BeginForm("Edit", "New", FormMethod.Post, new { }))
                 {
-                        @Html.AntiForgeryToken()
-                        @Html.ValidationSummary(true)
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true)
+                    @Html.HiddenFor(x => x.Id);
+                    @Html.HiddenFor(x => x.CategoryID);
             <div class="card-body">
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Tên danh muc</label>
-                    @Html.TextBoxFor(x => x.Title, new { @class = "form-control", @placeholder = "ten danh muc" })
+                    <label for="exampleInputEmail1">Tên tiêu đề</label>
+                    @Html.TextBoxFor(x => x.Title, new { @class = "form-control", @placeholder = "Tiêu đề" })
                     @Html.ValidationMessageFor(x => x.Title, null, new { @class = "text-danger" })
                 </div>
+
                 <div class="form-group">
                     <label for="exampleInputEmail1">Mô tả</label>
                     @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
-
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Thứ tư</label>
-                    @Html.TextBoxFor(x => x.Position, new { @class = "form-control", @Value = "1" })
-
+                    <label for="exampleInputEmail1">Ảnh</label>
+                    <div class="input-group">
+                        <div class="custom-file">
+                            @Html.TextBoxFor(x => x.Image, new { @id = "txtImage", @class = "form-control" })
+                        </div>
+                        <div class="input-group-append">
+                            <input class="btnInput btn btn-primary btn-sm" onclick="BrowseServer('txtImage');" value="Tải lên" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Chi tiết</label>
+                    @Html.TextAreaFor(x => x.Detail, new { @class = "form-control", @id = "txtDetail" })
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Seo Title</label>
                     @Html.TextAreaFor(x => x.SeoTitle, new { @class = "form-control" })
-
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Seo Description</label>
@@ -92,13 +105,14 @@
 
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Hiển thị</label>
+                    <label for="exampleInputEmail1">Hiển thị</label><br/>
                     @Html.CheckBoxFor(x => x.IsActive)
                 </div>
+
             </div>
-                            <!-- /.card-body -->
+                    <!-- /.card-body -->
                     <div class="card-footer">
-                        <a href="/Admin/Category" class="btn btn-danger">Quay lai</a>
+                        <a href="/Admin/New" class="btn btn-danger">Quay lai</a>
                         <button type="submit" class="btn btn-primary">Xác nhận</button>
                     </div>
 
@@ -115,5 +129,21 @@
     <!-- /.card -->
 </section>
 
-
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            CKEDITOR.replace('txtDetail', {
+                customConfig: '/content/ckeditor/config.js',
+                extraAllowedContent: 'span',
+            });
+        });
+        function BrowseServer(field) {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                document.getElementById(field).value = fileUrl;
+            };
+            finder.popup();
+        }
+    </script>
+}
 
