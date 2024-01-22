@@ -111,3 +111,8 @@ D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\bin\CKFinder.pdb
 D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBanHang.Migrations.db.resources
 D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBanHang.csproj.GenerateResource.cache
 D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBanHang.Migrations.db1.resources
+D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBanHang.Migrations.db2.resources
+D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBanHang.Migrations.db3.resources
+D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBanHang.Migrations.db4.resources
+D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBanHang.Migrations.db5.resources
+D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBanHang.Migrations.db6.resources

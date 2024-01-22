@@ -175,6 +175,7 @@
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\NewController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PostController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -189,11 +190,32 @@
     <Compile Include="Migrations\202401201740333_db1.Designer.cs">
       <DependentUpon>202401201740333_db1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202401221649241_db2.cs" />
+    <Compile Include="Migrations\202401221649241_db2.Designer.cs">
+      <DependentUpon>202401221649241_db2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202401221709028_db3.cs" />
+    <Compile Include="Migrations\202401221709028_db3.Designer.cs">
+      <DependentUpon>202401221709028_db3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202401221713137_db4.cs" />
+    <Compile Include="Migrations\202401221713137_db4.Designer.cs">
+      <DependentUpon>202401221713137_db4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202401221716037_db5.cs" />
+    <Compile Include="Migrations\202401221716037_db5.Designer.cs">
+      <DependentUpon>202401221716037_db5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202401221758259_db6.cs" />
+    <Compile Include="Migrations\202401221758259_db6.Designer.cs">
+      <DependentUpon>202401221758259_db6.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CommonAbstract.cs" />
     <Compile Include="Models\Commons\Filter.cs" />
     <Compile Include="Models\EF\Adv.cs" />
+    <Compile Include="Models\EF\AlowHtmlAttribute.cs" />
     <Compile Include="Models\EF\Category.cs" />
     <Compile Include="Models\EF\Contact.cs" />
     <Compile Include="Models\EF\New.cs" />
@@ -3107,6 +3129,9 @@
     <Content Include="Content\ckeditor\skins\moono\readme.md" />
     <Content Include="Content\ckfinder\plugins\fileeditor\codemirror\LICENSE" />
     <Content Include="Areas\Admin\Views\New\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Post\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\Post\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Post\Edit.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -3177,6 +3202,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202401201740333_db1.resx">
       <DependentUpon>202401201740333_db1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401221649241_db2.resx">
+      <DependentUpon>202401221649241_db2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401221709028_db3.resx">
+      <DependentUpon>202401221709028_db3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401221713137_db4.resx">
+      <DependentUpon>202401221713137_db4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401221716037_db5.resx">
+      <DependentUpon>202401221716037_db5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401221758259_db6.resx">
+      <DependentUpon>202401221758259_db6.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
