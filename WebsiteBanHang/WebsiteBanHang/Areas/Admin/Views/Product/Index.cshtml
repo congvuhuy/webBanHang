@@ -1,8 +1,8 @@
-﻿@model PagedList.PagedList<WebsiteBanHang.Models.EF.New>
+﻿@model PagedList.PagedList<WebsiteBanHang.Models.EF.Product>
 @using PagedList;
 @using PagedList.Mvc;
 @{
-    ViewBag.Title = "Tin tức";
+    ViewBag.Title = "Sản Phẩm";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
@@ -15,7 +15,7 @@
             <a href="/Admin/Home" class="nav-link">Home</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="/Admin/New" class="nav-link">Tin tức</a>
+            <a href="/Admin/Product" class="nav-link">Sản phẩm</a>
         </li>
 
     </ul>
@@ -24,12 +24,12 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Tin tức</h1>
+                <h1>Sản phẩm</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="/Admin/Home">Trang chủ</a></li>
-                    <li class="breadcrumb-item active">Tin tức</li>
+                    <li class="breadcrumb-item active">Sản phẩm</li>
                 </ol>
             </div>
         </div>
@@ -43,23 +43,23 @@
     <!-- Default box -->
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Danh sách tin tức</h3>
+            <h3 class="card-title">Danh sách Sản phẩm</h3>
             <div class="card-tools">
-                <a href="/Admin/New/Add" class="btn btn-primary">Thêm mới</a>
+                <a href="/Admin/Product/Add" class="btn btn-primary">Thêm mới</a>
                 <a href="#" class="btn btn-danger btnDeleteAll">Xóa</a>
             </div>
         </div>
         <div class="card-body">
             <div class="row">
                 <div class="col-4">
-                    @using (Html.BeginForm("Index", "New", FormMethod.Get, new { }))
+                    @using (Html.BeginForm("Index", "Product", FormMethod.Get, new { }))
                     {
-                    <div class="input-group input-group-sm">
-                        @Html.TextBox("SearchText")
-                        <span class="input-group-append">
-                            <button type="submit" class="btn btn-info btn-flat">Tìm kiếm</button>
-                        </span>
-                    </div>
+                        <div class="input-group input-group-sm">
+                            @Html.TextBox("SearchText")
+                            <span class="input-group-append">
+                                <button type="submit" class="btn btn-info btn-flat">Tìm kiếm</button>
+                            </span>
+                        </div>
                     }
 
                 </div>
@@ -67,7 +67,7 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th style="width:100px;"><input type="checkbox" id="selectAll"/>All</th>
+                        <th style="width:100px;"><input type="checkbox" id="selectAll" />All</th>
                         <th style="width:55px;">Stt</th>
                         <th style="width:150px;">Ảnh</th>
                         <th>Tiêu đề</th>
@@ -81,8 +81,8 @@
                     int i = 1;
                     foreach (var item in Model)
                     {
-                        int a = (ViewBag.page-1)* 5 + i;
-                        var StrCheck = @item.IsActive ? "<i class='fas fa-check text-success'></i>" : "<i class='fas fa-times text-danger'></i>";
+                        int a = (ViewBag.page - 1) * 5 + i;
+                        //var StrCheck = @item.IsActive ? "<i class='fas fa-check text-success'></i>" : "<i class='fas fa-times text-danger'></i>";
 
                         <tr id="trow_@item.Id">
                             <td><input type="checkbox" class="select" value="@item.Id" /></td>
@@ -90,13 +90,11 @@
                             <td><img src="@item.Image" class="rounded-circle" height="70px" width="70px" /></td>
                             <td>@item.Title</td>
                             <td>@item.CreateDate.ToString("dd/MM/yyyy")</td>
-                            <td>
-                                <a href="#" data-id="@item.Id" class="btnActive px-3">@Html.Raw(StrCheck)</a>
-                            </td>
+                           
                             <td>
                                 <a href="/Admin/New/Edit/@item.Id" class="btn btn-danger">Sửa</a>
                                 <a href="#" data-id="@item.Id" class="btn btn-primary btnDelete">Xóa</a>
-                                
+
                             </td>
                         </tr>
 
@@ -120,7 +118,7 @@
                     @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
                 </div>
             </div>
-            
+
         </div>
         <!-- /.card-body -->
         @*<div class="card-footer">
@@ -152,7 +150,7 @@
                     checkItem.attr('selected', '');
                 }
             });
-            var conf = confirm("Xác nhân xóa tất cả tin tức trên");
+            var conf = confirm("Xác nhân xóa tất cả Sản phẩm trên");
             if (conf) {
                 $.ajax({
                     url: '/Admin/New/DeleteAll',

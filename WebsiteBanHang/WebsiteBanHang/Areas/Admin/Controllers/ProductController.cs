@@ -9,28 +9,27 @@ using WebsiteBanHang.Models.EF;
 
 namespace WebsiteBanHang.Areas.Admin.Controllers
 {
-    public class NewController : Controller
+    public class ProductController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-        // GET: Admin/New
-        public ActionResult Index(string SearchText, int? page)
+        // GET: Admin/Product
+        public ActionResult Index(int? page)
         {
             int pageSize = 5;
             if (page == null)
             {
                 page = 1;
             }
-            IEnumerable<New> items = db.News.OrderByDescending(x => x.Id);
-            if (!string.IsNullOrEmpty(SearchText))
-            {
-                items = items.Where(x => x.Alias.Contains(SearchText) || x.Title.Contains(SearchText));
-            }
-                var pageIndex = page.HasValue ? Convert.ToInt32(page) : 1;
-            items = items.ToPagedList(pageIndex,pageSize);
+            IEnumerable<Product> items = db.Products.OrderByDescending(x => x.Id);
+            //if (!string.IsNullOrEmpty(SearchText))
+            //{
+            //    items = items.Where(x => x.Alias.Contains(SearchText) || x.Title.Contains(SearchText));
+            //}
+            var pageIndex = page.HasValue ? Convert.ToInt32(page) : 1;
+            items = items.ToPagedList(pageIndex, pageSize);
             ViewBag.pageSize = pageSize;
             ViewBag.page = page;
             return View(items);
-            
         }
         public ActionResult Add()
         {
@@ -38,48 +37,56 @@ namespace WebsiteBanHang.Areas.Admin.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Add(New model)
+        public ActionResult Add(Product model)
         {
             if (ModelState.IsValid)
             {
                 model.CreateDate = DateTime.Now;
                 model.ModifierDate = DateTime.Now;
-                model.CategoryID = 2;
+                model.ProductCategoryID = 2;
                 model.Alias = WebsiteBanHang.Models.Commons.Filter.FilterChar(model.Title);
-                db.News.Add(model);
+                db.Products.Add(model);
                 db.SaveChanges();
-                
+
                 return RedirectToAction("Index");
             }
             return View(model);
         }
         public ActionResult Edit(int id)
         {
-            var item = db.News.Find(id);
+            var item = db.Products.Find(id);
             return View(item);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(New model)
+        public ActionResult Edit(Product model)
         {
             if (ModelState.IsValid)
             {
 
-                db.News.Attach(model);
+                db.Products.Attach(model);
                 model.ModifierDate = DateTime.Now;
                 model.Alias = WebsiteBanHang.Models.Commons.Filter.FilterChar(model.Title);
                 db.Entry(model).Property(x => x.Title).IsModified = true;
-                db.Entry(model).Property(x => x.CategoryID).IsModified = true;
+                db.Entry(model).Property(x => x.ProductCode).IsModified = true;
+                db.Entry(model).Property(x => x.ProductCategoryID).IsModified = true;
                 db.Entry(model).Property(x => x.Image).IsModified = true;
                 db.Entry(model).Property(x => x.Detail).IsModified = true;
                 db.Entry(model).Property(x => x.Description).IsModified = true;
                 db.Entry(model).Property(x => x.Alias).IsModified = true;
+                db.Entry(model).Property(x => x.Price).IsModified = true;
+                db.Entry(model).Property(x => x.PriceSale).IsModified = true;
+                db.Entry(model).Property(x => x.Quantity).IsModified = true;
                 db.Entry(model).Property(x => x.SeoTitle).IsModified = true;
                 db.Entry(model).Property(x => x.SeoDescription).IsModified = true;
                 db.Entry(model).Property(x => x.SeoKeywords).IsModified = true;
                 db.Entry(model).Property(x => x.ModifierDate).IsModified = true;
                 db.Entry(model).Property(x => x.ModifierBy).IsModified = true;
-                db.Entry(model).Property(x => x.IsActive).IsModified = true;
+                db.Entry(model).Property(x => x.IsFeture).IsModified = true;
+                db.Entry(model).Property(x => x.IsSale).IsModified = true;
+                db.Entry(model).Property(x => x.IsHot).IsModified = true;
+                db.Entry(model).Property(x => x.IsHome).IsModified = true;
+
                 //db.Entry(model).State=System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -89,40 +96,28 @@ namespace WebsiteBanHang.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult Delete(int id)
         {
-            var item = db.News.Find(id);
+            var item = db.Products.Find(id);
             if (item != null)
             {
-                db.News.Remove(item);
+                db.Products.Remove(item);
                 db.SaveChanges();
                 return Json(new { success = true });
             }
             return Json(new { success = false });
         }
-        [HttpPost]
-        public ActionResult Active(int id)
-        {
-            var item = db.News.Find(id);
-            if (item != null)
-            {
-                item.IsActive = !item.IsActive;
-                db.Entry(item).Property(x => x.IsActive).IsModified = true;
-                db.SaveChanges();
-                return Json(new { success = true, IsActives = item.IsActive });
-            }
-            return Json(new { success = false });
-        }
+
         [HttpPost]
         public ActionResult DeleteAll(string ids)
         {
             if (!string.IsNullOrEmpty(ids))
             {
                 var items = ids.Split(',');
-                if (items!=null && items.Any())
+                if (items != null && items.Any())
                 {
                     foreach (var item in items)
                     {
-                        var i = db.News.Find(Convert.ToInt32(item));
-                        db.News.Remove(i);
+                        var i = db.Products.Find(Convert.ToInt32(item));
+                        db.Products.Remove(i);
                         db.SaveChanges();
                     }
                 }

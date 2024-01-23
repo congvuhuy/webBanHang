@@ -105,7 +105,6 @@ D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBan
 D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBanHang.csproj.CopyComplete
 D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBanHang.dll
 D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBanHang.pdb
-D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBanHang.csproj.AssemblyReference.cache
 D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\bin\CKFinder.dll
 D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\bin\CKFinder.pdb
 D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBanHang.Migrations.db.resources
@@ -116,3 +115,9 @@ D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBan
 D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBanHang.Migrations.db4.resources
 D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBanHang.Migrations.db5.resources
 D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBanHang.Migrations.db6.resources
+D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\bin\PagedList.dll
+D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\bin\PagedList.Mvc.dll
+D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\bin\PagedList.xml
+D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\bin\PagedList.Mvc.xml
+D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBanHang.Migrations.db7.resources
+D:\code\WebBanHang\WebBanHang\WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBanHang.Migrations.db8.resources
