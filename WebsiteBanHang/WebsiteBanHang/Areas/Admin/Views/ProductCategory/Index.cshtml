@@ -1,8 +1,8 @@
-﻿@model PagedList.PagedList<WebsiteBanHang.Models.EF.Product>
+﻿@model PagedList.PagedList<WebsiteBanHang.Models.EF.ProductCategory>
 @using PagedList;
 @using PagedList.Mvc;
 @{
-    ViewBag.Title = "Sản Phẩm";
+    ViewBag.Title = "Danh mục sản phẩm";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
@@ -15,7 +15,7 @@
             <a href="/Admin/Home" class="nav-link">Home</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="/Admin/Product" class="nav-link">Sản phẩm</a>
+            <a href="/Admin/ProductCategory" class="nav-link">Danh mục sản phẩm</a>
         </li>
 
     </ul>
@@ -24,12 +24,12 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Sản phẩm</h1>
+                <h1>Tin tức</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="/Admin/Home">Trang chủ</a></li>
-                    <li class="breadcrumb-item active">Sản phẩm</li>
+                    <li class="breadcrumb-item active">Danh mục sản phẩm</li>
                 </ol>
             </div>
         </div>
@@ -43,16 +43,16 @@
     <!-- Default box -->
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Danh sách Sản phẩm</h3>
+            <h3 class="card-title">Danh sách tin tức</h3>
             <div class="card-tools">
-                <a href="/Admin/Product/Add" class="btn btn-primary">Thêm mới</a>
+                <a href="/Admin/ProductCategory/Add" class="btn btn-primary">Thêm mới</a>
                 <a href="#" class="btn btn-danger btnDeleteAll">Xóa</a>
             </div>
         </div>
         <div class="card-body">
             <div class="row">
                 <div class="col-4">
-                    @using (Html.BeginForm("Index", "Product", FormMethod.Get, new { }))
+                    @using (Html.BeginForm("Index", "ProductCategory", FormMethod.Get, new { }))
                     {
                         <div class="input-group input-group-sm">
                             @Html.TextBox("SearchText")
@@ -67,15 +67,11 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th style="width:100px;"><input type="checkbox" id="selectAll" />All</th>
-                        <th style="width:55px;">STT</th>
-                        <th style="width:150px;">Hình ảnh</th>
-                        <th>Tên sản phẩm</th>
-                        <th>Danh mục</th>
-                        <th>Số lượng</th>
-                        <th>Giá</th>
+                        <th ><input type="checkbox" id="selectAll" />All</th>
+                        <th >Stt</th>
+                        <th>Tiêu đề</th>
                         <th>Ngày tạo</th>
-                        <th>Hiển thị</th>
+                        
                         <th style="width:250px;"></th>
                     </tr>
                 </thead>
@@ -90,14 +86,11 @@
                         <tr id="trow_@item.Id">
                             <td><input type="checkbox" class="select" value="@item.Id" /></td>
                             <td>@a</td>
-                            <td><img src="@item.Image" class="rounded-circle" height="70px" width="70px" /></td>
+                            
                             <td>@item.Title</td>
-                            <td>@item.ProductCategory.Title</td>
-                            <td>@item.Price</td>
                             <td>@item.CreateDate.ToString("dd/MM/yyyy")</td>
-
                             <td>
-                                <a href="/Admin/New/Edit/@item.Id" class="btn btn-danger">Sửa</a>
+                                <a href="/Admin/ProductCategory/Edit/@item.Id" class="btn btn-danger">Sửa</a>
                                 <a href="#" data-id="@item.Id" class="btn btn-primary btnDelete">Xóa</a>
 
                             </td>
@@ -155,10 +148,10 @@
                     checkItem.attr('selected', '');
                 }
             });
-            var conf = confirm("Xác nhân xóa tất cả Sản phẩm trên");
+            var conf = confirm("Xác nhân xóa tất cả tin tức trên");
             if (conf) {
                 $.ajax({
-                    url: '/Admin/New/DeleteAll',
+                    url: '/Admin/ProductCategory/DeleteAll',
                     type: 'POST',
                     data: { ids: str },
                     success: function (rs) {
@@ -189,7 +182,7 @@
             var conf = confirm("Xac nhan xoa!");
             if (conf === true) {
                 $.ajax({
-                    url: '/Admin/New/Delete',
+                    url: '/Admin/ProductCategory/Delete',
                     type: 'POST',
                     data: { id: id },
                     success: function (rs) {
@@ -206,7 +199,7 @@
             var id = btn.data("id");
 
             $.ajax({
-                url: '/Admin/New/Active',
+                url: '/Admin/ProductCategory/Active',
                 type: 'POST',
                 data: { id: id },
                 success: function (rs) {

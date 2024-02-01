@@ -30,6 +30,8 @@ namespace WebsiteBanHang.Models.EF
         public Decimal Price { get; set; }
         public Decimal PriceSale { get; set; }
         public int Quantity { get; set; }
+        public bool IsActive { get; set; }
+
         public bool IsHome { get; set; }
         public bool IsSale { get; set; }
         public bool IsFeture { get; set; }

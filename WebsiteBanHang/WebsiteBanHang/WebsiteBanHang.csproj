@@ -182,6 +182,7 @@
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\NewController.cs" />
     <Compile Include="Areas\Admin\Controllers\PostController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductCategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -224,6 +225,18 @@
     <Compile Include="Migrations\202401230940236_db8.cs" />
     <Compile Include="Migrations\202401230940236_db8.Designer.cs">
       <DependentUpon>202401230940236_db8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202401241722080_db9.cs" />
+    <Compile Include="Migrations\202401241722080_db9.Designer.cs">
+      <DependentUpon>202401241722080_db9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202401261748558_db10.cs" />
+    <Compile Include="Migrations\202401261748558_db10.Designer.cs">
+      <DependentUpon>202401261748558_db10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202401261805295_db11.cs" />
+    <Compile Include="Migrations\202401261805295_db11.Designer.cs">
+      <DependentUpon>202401261805295_db11.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -3149,6 +3162,10 @@
     <Content Include="Areas\Admin\Views\Post\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Post\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Product\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductCategory\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductCategory\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductCategory\Edit.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -3160,6 +3177,12 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Uploads\images\7e7f820f-0ac8-4ddf-8872-7c84dabea6d4.jpg" />
+    <Content Include="Uploads\images\trump-do-i-cha-t-o-new-york-17-5423-6206-1705756652.png" />
+    <Content Include="Uploads\images\WIN_20231119_22_28_16_Pro.jpg" />
+    <Content Include="Uploads\_thumbs\Images\7e7f820f-0ac8-4ddf-8872-7c84dabea6d4.jpg" />
+    <Content Include="Uploads\_thumbs\Images\trump-do-i-cha-t-o-new-york-17-5423-6206-1705756652.png" />
+    <Content Include="Uploads\_thumbs\Images\WIN_20231119_22_28_16_Pro.jpg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -3240,6 +3263,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202401230940236_db8.resx">
       <DependentUpon>202401230940236_db8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401241722080_db9.resx">
+      <DependentUpon>202401241722080_db9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401261748558_db10.resx">
+      <DependentUpon>202401261748558_db10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401261805295_db11.resx">
+      <DependentUpon>202401261805295_db11.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
