@@ -38,6 +38,7 @@ namespace WebsiteBanHang.Models
         public DbSet<ProductCategory> ProductCategories { get; set; }
         public DbSet<Subcribe> Subcribes{ get; set; }
         public DbSet<SystemSetting> SystemSettings { get; set; }
+        public DbSet<ProductImage> ProductImages { get; set; }
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();

@@ -10,6 +10,11 @@ namespace WebsiteBanHang.Models.EF
     [Table("tb_Product")]
     public class Product:CommonAbstract
     {
+        public Product()
+        {
+            this.ProductImages = new HashSet<ProductImage>();
+            this.OrderDetails = new HashSet<OrderDetail>();
+        }
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
@@ -43,7 +48,9 @@ namespace WebsiteBanHang.Models.EF
         [StringLength(250)]
         public string SeoKeywords { get; set; }
         public virtual ProductCategory ProductCategory { get; set; }
-        public virtual OrderDetail OrderDetail { get; set; }
+        public ICollection <OrderDetail> OrderDetails { get; set; }
+        public ICollection <ProductImage> ProductImages { get; set; }
 
-    }
+
+    } 
 }

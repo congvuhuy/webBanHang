@@ -20,6 +20,7 @@
 
     </ul>
 }
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 <section class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
@@ -68,54 +69,57 @@
                 <thead>
                     <tr>
                         <th style="width:100px;"><input type="checkbox" id="selectAll" />All</th>
-                        <th style="width:55px;">STT</th>
-                        <th style="width:150px;">Hình ảnh</th>
+                        <th>STT</th>
+                        <th>Hình ảnh</th>
                         <th>Tên sản phẩm</th>
                         <th>Danh mục</th>
                         <th>Số lượng</th>
                         <th>Giá</th>
                         <th>Ngày tạo</th>
                         <th>Hiển thị</th>
-                        <th style="width:250px;"></th>
                     </tr>
                 </thead>
-                @if (Model != null && Model.Any())
-                {
-                    int i = 1;
-                    foreach (var item in Model)
+                <tbody>
+                    @if (Model != null && Model.Any())
                     {
-                        int a = (ViewBag.page - 1) * 5 + i;
-                        //var StrCheck = @item.IsActive ? "<i class='fas fa-check text-success'></i>" : "<i class='fas fa-times text-danger'></i>";
+                        int i = 1;
+                        foreach (var item in Model)
+                        {
+                            int a = (ViewBag.page - 1) * 5 + i;
+                            var StrCheck = @item.IsActive ? "<i class='fas fa-check text-success'></i>" : "<i class='fas fa-times text-danger'></i>";
 
-                        <tr id="trow_@item.Id">
-                            <td><input type="checkbox" class="select" value="@item.Id" /></td>
-                            <td>@a</td>
-                            <td><img src="@item.Image" class="rounded-circle" height="70px" width="70px" /></td>
-                            <td>@item.Title</td>
-                            <td>@item.ProductCategory.Title</td>
-                            <td>@item.Price</td>
-                            <td>@item.CreateDate.ToString("dd/MM/yyyy")</td>
+                            <tr id="trow_@item.Id">
+                                <td><input type="checkbox" class="select" value="@item.Id" /></td>
+                                <td>@a</td>
+                                <td><img class="imgproduct" data-id="@item.Id" src="@item.Image" width="50" /></td>
+                                <td>@item.Title</td>
+                                <td>@item.ProductCategory.Title</td>
+                                <td>@item.Quantity</td>
+                                <td>@item.Price đ</td>
+                                <td>@item.CreateDate.ToString("dd/MM/yyyy")</td>
+                                <td> <a href="#" data-id="@item.Id" class="btnActive px-3">@Html.Raw(StrCheck)</a></td>
+                                <td>
+                                    <a href="/Admin/Product/Edit/@item.Id" class="btn btn-danger">Sửa</a>
+                                    <a href="#" data-id="@item.Id" class="btn btn-primary btnDelete">Xóa</a>
 
-                            <td>
-                                <a href="/Admin/New/Edit/@item.Id" class="btn btn-danger">Sửa</a>
-                                <a href="#" data-id="@item.Id" class="btn btn-primary btnDelete">Xóa</a>
+                                </td>
+                            </tr>
 
+                            i++;
+                        }
+
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="4">
+                                Không có bản ghi nào
                             </td>
                         </tr>
 
-                        i++;
                     }
+                </tbody>
 
-                }
-                else
-                {
-                    <tr>
-                        <td colspan="4">
-                            Không có bản ghi nào
-                        </td>
-                    </tr>
-
-                }
             </table>
             <div class="row">
                 <div class="col-6"></div>
@@ -133,10 +137,33 @@
     </div>
     <!-- /.card -->
 </section>
+<div id="dialog">
+    <iframe id="myIframe" style="border: 0; width: 100%; height: 100%;"></iframe>
+</div>
 <!-- /.content -->
 
 @section scripts{
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script>
+        $("#dialog").dialog({
+            autoOpen: false,
+            show: "fade",
+            hide: "fade",
+            modal: true,
+            height: '600',
+            width: '700',
+            resizable: true,
+            title: 'Quản lý ảnh sản phẩm',
+            close: function () {
+                window.location.reload();
+            }
+        });
+        $('body').on("click", ".imgproduct", function () {
+            var proid = $(this).attr("data-id");
+            $("#dialog #myIframe").attr("src", "/admin/ProductImage/Index?id=" + proid);
+            $('#dialog').dialog('open');
+            return false;
+        });
         $('body').on('click', '.btnDeleteAll', function (e) {
             e.preventDefault();
             var str = "";
@@ -158,7 +185,7 @@
             var conf = confirm("Xác nhân xóa tất cả Sản phẩm trên");
             if (conf) {
                 $.ajax({
-                    url: '/Admin/New/DeleteAll',
+                    url: '/Admin/Product/DeleteAll',
                     type: 'POST',
                     data: { ids: str },
                     success: function (rs) {
@@ -189,7 +216,7 @@
             var conf = confirm("Xac nhan xoa!");
             if (conf === true) {
                 $.ajax({
-                    url: '/Admin/New/Delete',
+                    url: '/Admin/Product/Delete',
                     type: 'POST',
                     data: { id: id },
                     success: function (rs) {
@@ -206,7 +233,7 @@
             var id = btn.data("id");
 
             $.ajax({
-                url: '/Admin/New/Active',
+                url: '/Admin/Product/Active',
                 type: 'POST',
                 data: { id: id },
                 success: function (rs) {
@@ -224,6 +251,6 @@
 
 
         });
-                //});
+                    //});
     </script>
 }

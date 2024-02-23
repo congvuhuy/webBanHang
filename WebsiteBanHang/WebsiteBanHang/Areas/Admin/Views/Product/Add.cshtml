@@ -88,12 +88,12 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Danh mục</label>
-                                    @Html.DropDownListFor(x => x.ProductCategoryID, ViewBag.ProductCategory as SelectList,"Chọn danh mục", new { @class = "form-control" })
+                                    @Html.DropDownListFor(x => x.ProductCategoryID, ViewBag.ProductCategory as SelectList, "Chọn danh mục", new { @class = "form-control" })
                                     @Html.ValidationMessageFor(x => x.ProductCategoryID, null, new { @class = "text-danger" })
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Mô tả</label>
-                                    @Html.TextAreaFor(x => x.Description, new { @class = "form-control", @id="txtDetail" })
+                                    @Html.TextAreaFor(x => x.Description, new { @class = "form-control", @id = "txtDetail" })
                                     @Html.ValidationMessageFor(x => x.Description, null, new { @class = "text-danger" })
                                 </div>
                                 <div class="form-group">
@@ -157,6 +157,10 @@
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="card-footer text-right">
+                                    <a href="/Admin/Product" class="btn btn-danger">Quay lại</a>
+                                    <button type="submit" class="btn btn-primary">Xác nhận</button>
                                 </div>
                             </div>
                             <!-- /.tab-pane -->
@@ -246,14 +250,14 @@
                 if (currentID == 1) {
                     str += `<tr id="trow_${currentID}">
                              <td class="text-center">${currentID}</td>
-                             <td class="text-center"><img width="80px" src="${url}"/></td>
+                             <td class="text-center"><img width="80px" src="${url}"/><input type='hidden' value="${url}" name="Images"/></td>
                              <td class="text-center"> <input type="radio" value="${currentID}" name="rDefault" checked="checked"/> </td>
                              <td class="text-center"><a href="#" data-id="${currentID}" class="btn btn-sm btn-danger btnDeleteImg">Xóa</a></td>
                        </tr>`;
                 } else {
                     str += `<tr id="trow_${currentID}">
                              <td class="text-center">${currentID}</td>
-                             <td class="text-center"><img width="80px" src="${url}"/></td>
+                             <td class="text-center"><img width="80px" src="${url}"/><input type='hidden' value="${url}" name="Images"/></td>
                              <td class="text-center"> <input type="radio" value="${currentID}" name="rDefault"/> </td>
                              <td class="text-center"><a href="#" data-id="${currentID}" class="btn btn-sm btn-danger btnDeleteImg">Xóa</a></td>
                        </tr>`;

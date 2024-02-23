@@ -184,59 +184,16 @@
     <Compile Include="Areas\Admin\Controllers\PostController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductCategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductImageController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202401191827396_db.cs" />
-    <Compile Include="Migrations\202401191827396_db.Designer.cs">
-      <DependentUpon>202401191827396_db.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202401201740333_db1.cs" />
-    <Compile Include="Migrations\202401201740333_db1.Designer.cs">
-      <DependentUpon>202401201740333_db1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202401221649241_db2.cs" />
-    <Compile Include="Migrations\202401221649241_db2.Designer.cs">
-      <DependentUpon>202401221649241_db2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202401221709028_db3.cs" />
-    <Compile Include="Migrations\202401221709028_db3.Designer.cs">
-      <DependentUpon>202401221709028_db3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202401221713137_db4.cs" />
-    <Compile Include="Migrations\202401221713137_db4.Designer.cs">
-      <DependentUpon>202401221713137_db4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202401221716037_db5.cs" />
-    <Compile Include="Migrations\202401221716037_db5.Designer.cs">
-      <DependentUpon>202401221716037_db5.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202401221758259_db6.cs" />
-    <Compile Include="Migrations\202401221758259_db6.Designer.cs">
-      <DependentUpon>202401221758259_db6.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202401230938114_db7.cs" />
-    <Compile Include="Migrations\202401230938114_db7.Designer.cs">
-      <DependentUpon>202401230938114_db7.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202401230940236_db8.cs" />
-    <Compile Include="Migrations\202401230940236_db8.Designer.cs">
-      <DependentUpon>202401230940236_db8.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202401241722080_db9.cs" />
-    <Compile Include="Migrations\202401241722080_db9.Designer.cs">
-      <DependentUpon>202401241722080_db9.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202401261748558_db10.cs" />
-    <Compile Include="Migrations\202401261748558_db10.Designer.cs">
-      <DependentUpon>202401261748558_db10.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202401261805295_db11.cs" />
-    <Compile Include="Migrations\202401261805295_db11.Designer.cs">
-      <DependentUpon>202401261805295_db11.cs</DependentUpon>
+    <Compile Include="Migrations\202402201549228_db.cs" />
+    <Compile Include="Migrations\202402201549228_db.Designer.cs">
+      <DependentUpon>202402201549228_db.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -252,6 +209,7 @@
     <Compile Include="Models\EF\Post.cs" />
     <Compile Include="Models\EF\Product.cs" />
     <Compile Include="Models\EF\ProductCategory.cs" />
+    <Compile Include="Models\EF\ProductImage.cs" />
     <Compile Include="Models\EF\Subcribe.cs" />
     <Compile Include="Models\EF\SystemSetting.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -260,6 +218,66 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Assets\images\banner_1.jpg" />
+    <Content Include="Content\Assets\images\banner_2.jpg" />
+    <Content Include="Content\Assets\images\banner_3.jpg" />
+    <Content Include="Content\Assets\images\blog_1.jpg" />
+    <Content Include="Content\Assets\images\blog_2.jpg" />
+    <Content Include="Content\Assets\images\blog_3.jpg" />
+    <Content Include="Content\Assets\images\deal_ofthe_week.png" />
+    <Content Include="Content\Assets\images\desc_1.jpg" />
+    <Content Include="Content\Assets\images\desc_2.jpg" />
+    <Content Include="Content\Assets\images\desc_3.jpg" />
+    <Content Include="Content\Assets\images\map_marker.png" />
+    <Content Include="Content\Assets\images\product_1.png" />
+    <Content Include="Content\Assets\images\product_10.png" />
+    <Content Include="Content\Assets\images\product_2.png" />
+    <Content Include="Content\Assets\images\product_3.png" />
+    <Content Include="Content\Assets\images\product_4.png" />
+    <Content Include="Content\Assets\images\product_5.png" />
+    <Content Include="Content\Assets\images\product_6.png" />
+    <Content Include="Content\Assets\images\product_7.png" />
+    <Content Include="Content\Assets\images\product_8.png" />
+    <Content Include="Content\Assets\images\product_9.png" />
+    <Content Include="Content\Assets\images\single_1.jpg" />
+    <Content Include="Content\Assets\images\single_1_thumb.jpg" />
+    <Content Include="Content\Assets\images\single_2.jpg" />
+    <Content Include="Content\Assets\images\single_2_thumb.jpg" />
+    <Content Include="Content\Assets\images\single_3.jpg" />
+    <Content Include="Content\Assets\images\single_3_thumb.jpg" />
+    <Content Include="Content\Assets\images\slider_1.jpg" />
+    <Content Include="Content\Assets\js\categories_custom.js" />
+    <Content Include="Content\Assets\js\contact_custom.js" />
+    <Content Include="Content\Assets\js\custom.js" />
+    <Content Include="Content\Assets\js\jquery-3.2.1.min.js" />
+    <Content Include="Content\Assets\js\single_custom.js" />
+    <Content Include="Content\Assets\plugins\easing\easing.js" />
+    <Content Include="Content\Assets\plugins\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="Content\Assets\plugins\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="Content\Assets\plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\Assets\plugins\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="Content\Assets\plugins\Isotope\isotope.pkgd.min.js" />
+    <Content Include="Content\Assets\plugins\jquery-ui-1.12.1.custom\jquery-ui.css" />
+    <Content Include="Content\Assets\plugins\jquery-ui-1.12.1.custom\jquery-ui.js" />
+    <Content Include="Content\Assets\plugins\OwlCarousel2-2.2.1\ajax-loader.gif" />
+    <Content Include="Content\Assets\plugins\OwlCarousel2-2.2.1\animate.css" />
+    <Content Include="Content\Assets\plugins\OwlCarousel2-2.2.1\owl.carousel.css" />
+    <Content Include="Content\Assets\plugins\OwlCarousel2-2.2.1\owl.carousel.js" />
+    <Content Include="Content\Assets\plugins\OwlCarousel2-2.2.1\owl.theme.default.css" />
+    <Content Include="Content\Assets\plugins\OwlCarousel2-2.2.1\owl.video.play.png" />
+    <Content Include="Content\Assets\plugins\themify-icons\fonts\themify.svg" />
+    <Content Include="Content\Assets\plugins\themify-icons\themify-icons.css" />
+    <Content Include="Content\Assets\styles\bootstrap4\bootstrap.min.css" />
+    <Content Include="Content\Assets\styles\bootstrap4\bootstrap.min.js" />
+    <Content Include="Content\Assets\styles\bootstrap4\popper.js" />
+    <Content Include="Content\Assets\styles\categories_responsive.css" />
+    <Content Include="Content\Assets\styles\categories_styles.css" />
+    <Content Include="Content\Assets\styles\contact_responsive.css" />
+    <Content Include="Content\Assets\styles\contact_styles.css" />
+    <Content Include="Content\Assets\styles\main_styles.css" />
+    <Content Include="Content\Assets\styles\responsive.css" />
+    <Content Include="Content\Assets\styles\single_responsive.css" />
+    <Content Include="Content\Assets\styles\single_styles.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -3166,6 +3184,45 @@
     <Content Include="Areas\Admin\Views\ProductCategory\Index.cshtml" />
     <Content Include="Areas\Admin\Views\ProductCategory\Add.cshtml" />
     <Content Include="Areas\Admin\Views\ProductCategory\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductImage\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\LayoutEmty.cshtml" />
+    <Content Include="Content\Assets\plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\Assets\plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\Assets\plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\Assets\plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\Assets\plugins\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="Content\Assets\plugins\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="Content\Assets\plugins\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="Content\Assets\plugins\font-awesome-4.7.0\less\core.less" />
+    <Content Include="Content\Assets\plugins\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="Content\Assets\plugins\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="Content\Assets\plugins\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="Content\Assets\plugins\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="Content\Assets\plugins\font-awesome-4.7.0\less\list.less" />
+    <Content Include="Content\Assets\plugins\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="Content\Assets\plugins\font-awesome-4.7.0\less\path.less" />
+    <Content Include="Content\Assets\plugins\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="Content\Assets\plugins\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="Content\Assets\plugins\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="Content\Assets\plugins\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="Content\Assets\plugins\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="Content\Assets\plugins\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="Content\Assets\plugins\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="Content\Assets\plugins\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="Content\Assets\plugins\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="Content\Assets\plugins\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="Content\Assets\plugins\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="Content\Assets\plugins\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="Content\Assets\plugins\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="Content\Assets\plugins\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="Content\Assets\plugins\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="Content\Assets\plugins\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="Content\Assets\plugins\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="Content\Assets\plugins\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="Content\Assets\plugins\themify-icons\fonts\themify.eot" />
+    <Content Include="Content\Assets\plugins\themify-icons\fonts\themify.ttf" />
+    <Content Include="Content\Assets\plugins\themify-icons\fonts\themify.woff" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -3237,41 +3294,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202401191827396_db.resx">
-      <DependentUpon>202401191827396_db.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202401201740333_db1.resx">
-      <DependentUpon>202401201740333_db1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202401221649241_db2.resx">
-      <DependentUpon>202401221649241_db2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202401221709028_db3.resx">
-      <DependentUpon>202401221709028_db3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202401221713137_db4.resx">
-      <DependentUpon>202401221713137_db4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202401221716037_db5.resx">
-      <DependentUpon>202401221716037_db5.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202401221758259_db6.resx">
-      <DependentUpon>202401221758259_db6.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202401230938114_db7.resx">
-      <DependentUpon>202401230938114_db7.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202401230940236_db8.resx">
-      <DependentUpon>202401230940236_db8.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202401241722080_db9.resx">
-      <DependentUpon>202401241722080_db9.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202401261748558_db10.resx">
-      <DependentUpon>202401261748558_db10.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202401261805295_db11.resx">
-      <DependentUpon>202401261805295_db11.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202402201549228_db.resx">
+      <DependentUpon>202402201549228_db.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
